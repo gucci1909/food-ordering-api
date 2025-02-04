@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-=s3e93q!&si1ku&3^_9i-^vw-_!wfx5@a7(bx1^m7fd7%ivrac'
+SECRET_KEY = 'django-insecure-vbs#=$o=v4iw521y8ziey9^-@^b7u%fo0vcf*o784$^d8ple8r'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,14 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'accounts',
-    'home'
 ]
 
-EXTERNAL_APPS = [
-    'accounts',
-    'home'
-]
+EXTERNAL_APPS = ['home', 'accounts'];
 
 INSTALLED_APPS += EXTERNAL_APPS
 
@@ -84,8 +79,14 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'transport_1',
+        'USER': 'root',
+        'PASSWORD': 'Asdf2000*',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
